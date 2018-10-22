@@ -1,0 +1,14 @@
+<div class="container">
+	<form role="form" (submit)="createChannel($event, channelName.value)" class="text-center">
+		<input #channelName class="form-control form-control-lg" type="text" placeholder="Название" id="channel-name" #focus required>
+
+		<input #open type="radio" id="open" name="contact" value="openn" checked>
+		<label for="open" id="label-open">Открытый</label>
+
+		<input type="radio" id="private" name="contact" value="privatee">
+		<label for="private">Закрытый</label>
+
+		<br />
+		<button class="btn btn-lg btn-primary" type="submit">Создать канал</button>
+	</form>
+</div>

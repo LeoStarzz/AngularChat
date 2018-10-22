@@ -1,0 +1,32 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+	justify-content: center;
+	text-align: center;
+}
+
+.fa-minus {
+	font-family: fontawesome !important;
+}
+
+.fa-minus:hover {
+	cursor: pointer;
+}
+
+.fa-plus {
+	font-family: fontawesome !important;
+}
+
+.fa-plus:hover {
+	cursor: pointer;
+}
+
+.channel-users {
+	margin-right: 20px;
+}
+
+.nav {
+	display: inline-block;
+	text-align: initial;
+}

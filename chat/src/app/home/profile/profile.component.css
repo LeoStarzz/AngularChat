@@ -1,0 +1,19 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-control {
+	margin-bottom: 10px;
+}
+
+#email {
+	flex: 1 100%;
+}
+
+ul {
+	list-style-type: none;
+}

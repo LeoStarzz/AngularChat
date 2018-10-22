@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-md fixed-top">
+	<a class="navbar-brand" href="/">Angular Chat</a>
+	<a class="nav-link" aria-expanded="true" [class.active]="newChannel" (click)="selectNewChannel()">
+		<i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;Создать канал
+	</a>
+
+	<a class="profile nav-link" aria-expanded="true" [class.active]="profile" (click)="selectProfile()">
+		<i class="fas fa-user" aria-hidden="true"></i>&nbsp; Профиль
+	</a>
+
+	<a class="nav-link sign-out" aria-expanded="true" (click)="logout()">
+		<i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;Выйти
+	</a>
+</nav>
+<div class="container-fluid body">
+	<div class="row row-offcanvas row-offcanvas-left">
+		<nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar" id="sidebar" role="navigation">
+			<div class="wrapper">
+				<ul class="nav nav-pills flex-column">
+					<li class="nav-item" *ngFor="let channel of channels | async">
+						<div class="channels">
+							<a class="nav-link channel" aria-expanded="true" (click)="selectChannel(channel)" [class.active]="channel.$key == channelId">
+								{{ channel.name }}
+							</a>
+							<a aria-expanded="true" *ngIf="isPrivate(channel)" (click)="getChannelUsers(channel)" [class.active]="channelUsers" [class.active]="channel.$key == channelId">
+								<i class="fas fa-users" aria-hidden="true"></i>
+							</a>
+							<a *ngIf="isCreator(channel)" (click)="deleteChannel(channel)">
+								<i class="fas fa-minus-circle"></i>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<main class="col-sm-9 ml-sm-auto col-md-10 pt-2" role="main">
+			<h1 class="display-2 hidden-xs-down"></h1>
+			<app-new-channel *ngIf="newChannel" [newChannel]="newChannel"></app-new-channel>
+			<app-profile *ngIf="profile" [profile]="profile"></app-profile>
+			<app-channel-users *ngIf="channelUsers" [channelUsers]="channelUsers" [channelId]="channelId" [channel]="channel"></app-channel-users>
+			<app-chat [hidden]="!userPermission(channel, channelId) == true" [channelId]="channelId" [channel]="channel"></app-chat>
+		</main>
+	</div>
+</div>

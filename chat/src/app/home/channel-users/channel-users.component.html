@@ -1,0 +1,21 @@
+<div class="container">
+	<div class="channel-users">
+		<h5>Пользователи канала</h5>
+		<ul class="nav nav-pills flex-column">
+			<li class="channel-user" *ngFor="let chuser of chUsers | async">
+				  {{ chuser.displayName }}
+					<i *ngIf="canDelete(chuser, channel)" class="fas fa-minus" (click)="deleteUser(chuser)"></i>
+			</li>
+		</ul>
+	</div>
+	
+	<div *ngIf="isCreator(channel)" class="users">
+			<h5>Все пользователи</h5>
+			<ul class="nav nav-pills flex-column">
+					<li class="user" *ngFor="let user of users | async">
+						{{ user.displayName }}
+						<i *ngIf="!InChannel(channel, user)"class="fas fa-plus" (click)="addUser(user, channelId)"></i>
+					</li>
+				</ul>
+	</div>
+</div>

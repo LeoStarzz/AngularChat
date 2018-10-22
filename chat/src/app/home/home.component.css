@@ -1,0 +1,123 @@
+.body {
+  padding-top: 3.5rem;
+}
+
+.container-fluid {
+  bottom: 0;
+}
+
+.sidebar {
+  position: fixed;
+  top: 42px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px;
+  overflow-x: hidden;
+  background: #999999;
+  border-right: 1px solid #eee;
+}
+
+.cursor-list li:hover, a:hover {
+  cursor: pointer;
+}
+
+.wrapper {
+  overflow-y: auto;
+}
+
+/* Sidebar navigation */
+.sidebar {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.sidebar .nav {
+  margin-bottom: 20px;
+}
+
+.sidebar .nav-item {
+  width: 100%;
+}
+
+.sidebar .nav-item + .nav-item {
+  margin-left: 0;
+}
+
+.sidebar .nav-link {
+  border-radius: 0;
+}
+
+/*
+ * Dashboard
+ */
+
+main {
+  position: fixed;
+  top: 51px;
+  right: 0;
+  bottom: 0;
+}
+
+.sidebar-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1030;
+}
+
+.sign-out {
+	color: white;
+}
+
+.channels {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 80%;
+	color: black;
+}
+
+.channels:hover {
+	margin-left: 4px;
+}
+
+.nav-link.active {
+	color: white !important;
+}
+
+.fa-users {
+	font-family: fontawesome !important;
+	margin-left: 5px;
+	margin-right: 10px;
+}
+
+.fa-minus-circle {
+	font-family: fontawesome !important;
+}
+
+.fa-user {
+	font-family: fontawesome !important;
+}
+
+.navbar {
+	background-color: #007bff;
+	height: 42px;
+}
+
+.navbar-brand {
+	color: white;
+}
+
+.nav-link {
+	color: white !important;
+}
+
+.channel {
+	color: black !important;
+}
+
+.hidden {
+  display: none !important;
+}
